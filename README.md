@@ -20,3 +20,13 @@ JUST IN NEXT 言語研修 v2 開発環境構築手順<br>
 
 5.containerの開始<br>
 >make start
+
+【その他コマンド類】<br>
+・WSL一覧確認<br>
+>wsl -l -v
+
+・WSL停止<br>
+>wsl --shutdown
+
+・WSLログイン<br>
+>wsl -d [OS名]
