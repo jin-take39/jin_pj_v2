@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  web:
+    container_name: black-jack
+    image: jin-pj:latest
+    ports:
+      - 80:80
+    privileged: true
+    volumes:
+      - ../backend:/work/backend
+    networks:
+      local_net:
+        ipv4_address: 172.10.0.2
+
+  db:
+    image: mariadb:10.5
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: just1nnext
+      MYSQL_DATABASE: jin
+      MYSQL_USER: jin
+      MYSQL_PASSWORD: just1nnext
+      TZ: 'Asia/Tokyo'
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./docker/mysql/sql:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306
+    networks:
+      local_net:
+        ipv4_address: 172.10.0.3
+    restart: always
+
+networks:
+
+  local_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.10.0.0/24

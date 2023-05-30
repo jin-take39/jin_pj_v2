@@ -1,0 +1,3 @@
+infra/docker/mysql/data/labor/*.ibd
+infra/docker/mysql/data/labor/*.frm
+infra/docker/mysql/data/*
