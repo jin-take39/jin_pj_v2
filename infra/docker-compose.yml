@@ -3,7 +3,7 @@ version: '3'
 services:
   web:
     container_name: black-jack
-    image: jin-pj:latest
+    image: sample:latest
     ports:
       - 80:80
     privileged: true

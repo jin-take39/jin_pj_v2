@@ -1,10 +1,9 @@
 <?php
+        require_once ('./Controllers/GameController.php');
 
-    require_once ('./Controllers/DataBaseController.php');
-
-    $dbObj = new DataBaseController();
-    $dbObj->openDataBase();
-    $dbObj->closeDataBase();
+        $game = new GameController();
+        $game->start();
+        var_dump($game->getCardMap());
 ?>
 
 <html lang="ja">

@@ -1,0 +1,26 @@
+body{
+    font-size: 14px;
+    font-family: "Meiryo UI";
+}
+
+.container{
+    text-align: center;
+    padding: 10px;
+}
+
+.title{
+    font-size: 25px;
+    background: #16E;
+    color:#fff;
+    padding: 10px;
+}
+
+.sp{
+    padding:10px;
+}
+
+.btn{
+    padding:30px 100px 30px 100px;
+    font-size: 20px;
+
+}
